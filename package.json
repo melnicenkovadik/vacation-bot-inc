@@ -4,13 +4,14 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node bin/www",
+		"dev": "nodemon bin/www",
 		"deploy": "git add . && git commit -m 'fix' && git push heroku master"
-
 	},
 	"dependencies": {
 		"telegraf": "^3.25.0"
 	},
 	"devDependencies": {
-		"eslint": "^4.18.2"
+		"eslint": "^4.18.2",
+		"nodemon": "^2.0.15"
 	}
 }
