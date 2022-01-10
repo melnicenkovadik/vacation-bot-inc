@@ -3,7 +3,9 @@
 	"version": "1.5.8",
 	"main": "index.js",
 	"scripts": {
-		"start": "node bin/www"
+		"start": "node bin/www",
+		"deploy": "git add . && git commit -m 'fix' && git push heroku master"
+
 	},
 	"dependencies": {
 		"telegraf": "^3.25.0"
