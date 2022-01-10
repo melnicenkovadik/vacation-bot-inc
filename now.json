@@ -1,0 +1,19 @@
+{
+	"env": {
+		"VACATIONS_BOT_TOKEN": "731263070:AAELIVwAWXaRzbr55T-MikkXxvMqEYdwnfI",
+		"VACATIONS_BOT_PORT": "5000"
+	},
+	"alias": "vacation-bot-inc4",
+	"name": "vacation-bot-inc4",
+	"files": [
+		"bin/www",
+		"bot",
+		"calendar-helper",
+		".eslintrc.json",
+		".gitignore",
+		"index.js",
+		"now.json",
+		"package.json",
+		"README.md"
+	]
+}
