@@ -22,7 +22,7 @@ calendar.setDateListener((context, date) => {
 
 });
 
-
+console.log('dsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewandsakfm;ajosdgnjangjewan')
 bot.command("calendar", context => {
     const today = new Date();
     const minDate = new Date();
@@ -77,26 +77,29 @@ bot.command('addNote', ({reply}) => {
 })
 
 bot.command('sendAlexMolotsylo', (ctx) => {
-    ctx.telegram.sendMessage(AlexMolotsylo,
-        `
+    if (dates.length > 0){
+        ctx.telegram.sendMessage(AlexMolotsylo,
+            `
         ${ctx?.chat?.first_name ? ctx?.chat?.first_name : ''} ${ctx?.chat?.last_name ? ctx?.chat?.last_name : ''} (@${ctx.chat.username} ) хочет записать отпуск на даты:
          ${dates.join(" , ")}
          ${note !== '' ? 'Примечание: ' + note : ''}
          `
-    )
-    ctx.telegram.sendMessage(ctx.message.chat.id,
-        `@AlexMolotsylo было отправленно сообщение с текстом :
+        )
+        ctx.telegram.sendMessage(ctx.message.chat.id,
+            `@AlexMolotsylo было отправленно сообщение с текстом :
         "${ctx?.chat?.first_name ? ctx?.chat?.first_name : ''} ${ctx?.chat?.last_name ? ctx?.chat?.last_name : ''} (@${ctx.chat.username} ) хочет записать отпуск на даты:
          ${dates.join(" , ")} '"
          ${note !== '' ? 'Примечание: ' + note : ''}
          `
-    )
-
+        )
+    }
+    note=''
     dates = []
 })
 
 bot.hears('s', (ctx) => {
     let now = new Date();
+    console.log(now,'|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||');
     let millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 10, 0, 0, 0) - now;
     if (millisTill10 < 0) {
         millisTill10 += 86400000; //
@@ -105,6 +108,7 @@ bot.hears('s', (ctx) => {
         ctx.reply('Hey there 10 AM')
     }, millisTill10);
 })
+
 bot.catch((err) => {
     console.log("Error in bot:", err);
 });

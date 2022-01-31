@@ -1,17 +1,17 @@
 {
-	"name": "vacation-bot-inc4",
-	"version": "1.5.8",
-	"main": "index.js",
-	"scripts": {
-		"start": "node bin/www",
-		"dev": "nodemon bin/www",
-		"deploy": "git add . && git commit -m 'fix' && git push heroku master"
-	},
-	"dependencies": {
-		"telegraf": "^3.25.0"
-	},
-	"devDependencies": {
-		"eslint": "^4.18.2",
-		"nodemon": "^2.0.15"
-	}
+  "name": "vacation-bot-inc4",
+  "version": "1.5.8",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bin/www",
+    "deploy": "git add . && git commit -m 'fix' && git push heroku master",
+    "dev": "nodemon bin/www"
+  },
+  "dependencies": {
+    "telegraf": "^3.25.0",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.2"
+  }
 }
