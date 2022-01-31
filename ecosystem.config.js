@@ -2,7 +2,8 @@ module.exports = {
   apps : [{
     name:'vacation-bot',
     script: 'bot/index.js',
-    watch: '.'
+    instances: 1,
+    autorestart:true,
   }],
 
   deploy : {
